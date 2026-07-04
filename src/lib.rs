@@ -2,14 +2,14 @@
 
 use std::sync::LazyLock;
 
-use bc_indicators::indicators::ready_imports::*;
-use bc_indicators::indicators::{
+use bc_indicators::ready_imports::*;
+use bc_indicators::{
     avg::AVG, div::DIV, ema::EMA, minus::MINUS, mm_scaler::MM_SCALER, mult::MULT,
     osc_mult::OSC_MULT, percent::PERCENT, plus::PLUS, profit_factor::PROFIT_FACTOR, rem::REM,
     repeat::REPEAT, rma::RMA, rsi::RSI, sma::SMA, trend_ma::TREND_MA, wrap::WRAP,
 };
 use bc_utils_lg::types::maps::FUNCS_EXTRACT_ARGS_TYPE;
-use bc_utils_lg::settings::SETTINGS_IND;
+use bc_utils_lg::structs::settings::SETTINGS_IND;
 
 
 pub static FUNCS_EXTRACT_ARGS: LazyLock<fn() -> FUNCS_EXTRACT_ARGS_TYPE<SETTINGS_IND, Box<dyn Indicator>>> = LazyLock::new(|| {
