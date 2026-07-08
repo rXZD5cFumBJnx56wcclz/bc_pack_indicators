@@ -2,7 +2,7 @@
 
 use std::sync::LazyLock;
 
-use bc_indicators::ready_imports::*;
+use bc_indicators::prelude::*;
 use bc_indicators::{
     avg::AVG, div::DIV, ema::EMA, minus::MINUS, mm_scaler::MM_SCALER, mult::MULT,
     osc_mult::OSC_MULT, percent::PERCENT, plus::PLUS, profit_factor::PROFIT_FACTOR, rem::REM,
@@ -14,7 +14,7 @@ use bc_utils_lg::structs::settings::SETTINGS_IND;
 
 pub static FUNCS_EXTRACT_ARGS: LazyLock<fn() -> FUNCS_EXTRACT_ARGS_TYPE<SETTINGS_IND, Box<dyn Indicator>>> = LazyLock::new(|| {
     || {
-        FxHashMap::from_iter([
+        MAP::from_iter([
             (
                 "rsi",
                 (|v: &SETTINGS_IND| {
